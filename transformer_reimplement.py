@@ -78,7 +78,7 @@ class TransformerModel(nn.Module):
         self.encoder.weight.data.zero_()
         self.decoder.bias.data.zero_()
         self.decoder.weight.data.uniform_(-initrange, initrange)
-
+        
     def generate_square_subsequent_mask(self, sz):
         mask = (torch.triu(torch.ones(sz, sz)) == 1).transpose(0, 1)
         mask = mask.float().masked_fill(mask==0, float('-inf')).masked_fill(mask==0, float(0.0))
