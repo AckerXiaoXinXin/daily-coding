@@ -18,7 +18,7 @@ Examples:
 Todo:
     - Reimplement transfromer with torch.
 
-@file: LLM_LEARNING
+@file: LLM_LEARNING/Transformer_Learning
 @software: Visual Studio Code
 """
 
