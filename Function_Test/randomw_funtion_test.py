@@ -1,4 +1,2 @@
 import torch
-import torch.version 
-x = torch.version()
-print(x)
+print(torch.__version__)
