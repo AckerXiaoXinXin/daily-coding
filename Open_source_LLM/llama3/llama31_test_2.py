@@ -11,4 +11,3 @@ output = query({
 	"inputs": "Can you please let us know more details about your ",
 })
 
-print(output)
