@@ -28,11 +28,28 @@ url = "http://codeqwen1-5-7b-chat.jeeves-agi.klara.pek02.rack.zhihu.com/v1/compl
 
 input_text = "编写一个快速排序代码"
 
+headers = {"Content-Type": "application/json"}
+
+max_tokens=4096
+temperature=0.7
+top_p=0.3
+model="/mnt/models"
+
+
+parameters = {
+    "max_tokens": max_tokens,
+    "temperature": temperature,
+    "top_p": top_p,
+    "model": model,
+}
+
 data = {
     "input" : input_text
 }
 
-response = requests.post(url, json=data)
+response = requests.post(
+    url, headers=headers, json=parameters, stream=True
+)
 
 if response.status_code == 200:
     answer =response.json().get("output")
